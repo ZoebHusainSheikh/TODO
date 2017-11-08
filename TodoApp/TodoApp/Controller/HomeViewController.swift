@@ -10,6 +10,8 @@ import UIKit
 import RealmSwift
 
 class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate {
+    
+    let realmObj = try! Realm()
     var selectedTask:Task?
     var selectedSort:String = "Date"
     var todoList = Array<Task>()
@@ -52,8 +54,8 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item = todoList[indexPath.row]
-            try! realmInstance.write({
-                realmInstance.delete(item)
+            try! realmObj.write({
+                realmObj.delete(item)
                 todoList.remove(at: indexPath.row)
                 self.tableView.deleteRows(at:[indexPath], with: .automatic)
             })
@@ -75,10 +77,10 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func fetchTodoList(title:String = ""){
         var items:Results<Task>?
         if title.characters.count > 0 {
-            items = realmInstance.objects(Task.self).filter("title contains[c] '\(title)'")
+            items = realmObj.objects(Task.self).filter("title contains[c] '\(title)'")
         }
         else{
-            items = realmInstance.objects(Task.self)
+            items = realmObj.objects(Task.self)
         }
         
         todoList = []
@@ -95,6 +97,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         alertController.addTextField { textField in
             alertTextField = textField
             textField.placeholder = "Task Name"
+            textField.accessibilityIdentifier = "taskNametextField"
         }
         alertController.addAction(UIAlertAction(title: "Add", style: .default) { _ in
             guard let text = alertTextField.text , !text.isEmpty else { return }
@@ -103,8 +106,8 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             task.title = alertTextField.text!
             self.todoList.append(task)
             
-            try! realmInstance.write {
-                realmInstance.add(task)
+            try! self.realmObj.write {
+                self.realmObj.add(task)
             }
             self.reloadData()
         })
@@ -117,11 +120,12 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         alertController.addTextField { textField in
             alertTextField = textField
             textField.placeholder = task.title
+            textField.accessibilityIdentifier = "taskNametextField"
         }
         alertController.addAction(UIAlertAction(title: "Update", style: .default) { _ in
             guard let text = alertTextField.text , !text.isEmpty else { return }
             
-            try! realmInstance.write {
+            try! self.realmObj.write {
                 task.title = alertTextField.text!
             }
             self.reloadData()
@@ -175,7 +179,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             priority = 1
         }
         
-        try! realmInstance.write {
+        try! realmObj.write {
             selectedTask?.priority = priority
         }
         reloadData()

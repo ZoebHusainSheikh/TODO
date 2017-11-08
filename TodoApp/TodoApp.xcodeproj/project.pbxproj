@@ -16,13 +16,11 @@
 		481B00401FB18790007A5C55 /* TodoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B003F1FB18790007A5C55 /* TodoAppUITests.swift */; };
 		481B004E1FB1895B007A5C55 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B004D1FB1895B007A5C55 /* BaseViewController.swift */; };
 		48391F911FB1CC550031B5CB /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48391F901FB1CC550031B5CB /* TaskCell.swift */; };
-		48391F921FB1CC580031B5CB /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48391F901FB1CC550031B5CB /* TaskCell.swift */; };
 		48A6C0331FB194B100EFE736 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A6C0311FB194AE00EFE736 /* RealmSwift.framework */; };
 		48A6C0341FB194B100EFE736 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48A6C0311FB194AE00EFE736 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48A6C0351FB194B100EFE736 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A6C0321FB194B100EFE736 /* Realm.framework */; };
 		48A6C0361FB194B100EFE736 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48A6C0321FB194B100EFE736 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48A6C03B1FB1977500EFE736 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C03A1FB1977500EFE736 /* Task.swift */; };
-		48A6C03C1FB1977500EFE736 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C03A1FB1977500EFE736 /* Task.swift */; };
 		51595D3578D39834E3011834 /* Pods_TodoAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0860E53B6D64C966CE092ABA /* Pods_TodoAppUITests.framework */; };
 		A875C312B238C4FE231768BE /* libPods-TodoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 055F4DFD7595B5A8CC1CB827 /* libPods-TodoApp.a */; };
 		F9706B180C85F26B6D294F99 /* Pods_TodoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79A2895FA2F9B4288FDDF3A /* Pods_TodoAppTests.framework */; };
@@ -567,8 +565,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A6C03C1FB1977500EFE736 /* Task.swift in Sources */,
-				48391F921FB1CC580031B5CB /* TaskCell.swift in Sources */,
 				481B00351FB18790007A5C55 /* TodoAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
