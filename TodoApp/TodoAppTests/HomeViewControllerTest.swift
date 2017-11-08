@@ -19,7 +19,7 @@ class HomeViewControllerTest: XCTestCase {
         
         homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
         
-        //By fetching the view, the controller is initialised so we dont have to call loadView() which is not recommended
+        //By fetching the view, the controller is initialised so we dont have to call loadView() to do it and its not even recommended
         let _ = homeViewController?.view
         
     }
@@ -90,15 +90,15 @@ class HomeViewControllerTest: XCTestCase {
     func checkFormatting() {
         let lessThanAMinuteDate: Date = Date().addingTimeInterval(-30)
         let lessThanAMinuteDateString = homeViewController?.getTextToDisplayFormattingDate(date: lessThanAMinuteDate)
-        assert(lessThanAMinuteDateString?.lowercased().trimmingCharacters(in: CharacterSet(charactersIn: " ")) == "just now", "Date formatting for date \'less than a minute\' failed")
+        XCTAssert(lessThanAMinuteDateString?.lowercased().trimmingCharacters(in: CharacterSet(charactersIn: " ")) == "just now", "Date formatting for date \'less than a minute\' failed")
         
         let someMinutesDate: Date = Date().addingTimeInterval(-60 * 4)
         let someMinutesDateString = homeViewController?.getTextToDisplayFormattingDate(date: someMinutesDate)
-        assert(someMinutesDateString?.lowercased() == "4 mins", "Date formatting for date in minutes failed")
+        XCTAssert(someMinutesDateString?.lowercased() == "4 mins", "Date formatting for date in minutes failed")
         
         let someHoursDate: Date = Date().addingTimeInterval(-60 * 60 * 2)
         let someHoursDateString = homeViewController?.getTextToDisplayFormattingDate(date: someHoursDate)
-        assert(someHoursDateString?.lowercased() == "2 hours", "Date formatting for date in hours failed")
+        XCTAssert(someHoursDateString?.lowercased() == "2 hours", "Date formatting for date in hours failed")
     }
     
 }
