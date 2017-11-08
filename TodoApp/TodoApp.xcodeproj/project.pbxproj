@@ -22,8 +22,8 @@
 		48A6C0351FB194B100EFE736 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A6C0321FB194B100EFE736 /* Realm.framework */; };
 		48A6C0361FB194B100EFE736 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48A6C0321FB194B100EFE736 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48A6C03B1FB1977500EFE736 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C03A1FB1977500EFE736 /* Task.swift */; };
-		48A6C03C1FB1977500EFE736 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C03A1FB1977500EFE736 /* Task.swift */; };
 		51595D3578D39834E3011834 /* Pods_TodoAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0860E53B6D64C966CE092ABA /* Pods_TodoAppUITests.framework */; };
+		538CC6121FB2F44F00CA5E6D /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538CC6111FB2F44F00CA5E6D /* HomeViewControllerTest.swift */; };
 		A875C312B238C4FE231768BE /* libPods-TodoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 055F4DFD7595B5A8CC1CB827 /* libPods-TodoApp.a */; };
 		F9706B180C85F26B6D294F99 /* Pods_TodoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79A2895FA2F9B4288FDDF3A /* Pods_TodoAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +84,7 @@
 		48A6C0321FB194B100EFE736 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		48A6C0391FB196EA00EFE736 /* TodoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoApp.entitlements; sourceTree = "<group>"; };
 		48A6C03A1FB1977500EFE736 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		538CC6111FB2F44F00CA5E6D /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
 		57DBF1110091D4297848CAE2 /* Pods-TodoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodoAppTests/Pods-TodoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7D4F856FA4078E229ED4AE54 /* Pods-TodoAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodoAppUITests/Pods-TodoAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		926420DBA78DDBF59A5B94D4 /* Pods-TodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodoApp/Pods-TodoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				481B00341FB18790007A5C55 /* TodoAppTests.swift */,
+				538CC6111FB2F44F00CA5E6D /* HomeViewControllerTest.swift */,
 				481B00361FB18790007A5C55 /* Info.plist */,
 			);
 			path = TodoAppTests;
@@ -567,9 +569,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A6C03C1FB1977500EFE736 /* Task.swift in Sources */,
 				48391F921FB1CC580031B5CB /* TaskCell.swift in Sources */,
 				481B00351FB18790007A5C55 /* TodoAppTests.swift in Sources */,
+				538CC6121FB2F44F00CA5E6D /* HomeViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

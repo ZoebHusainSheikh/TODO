@@ -138,10 +138,20 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             textToDisplay = "just now "
         }
         else if timeInterval < 60 * 60 {
-            textToDisplay = "\(Int(timeInterval / 60)) min"
+            textToDisplay = "\(Int(timeInterval / 60))"
+            if Int(timeInterval / 60) == 1 {
+                textToDisplay = textToDisplay + " min"
+            } else {
+                textToDisplay = textToDisplay + " mins"
+            }
         }
         else if timeInterval < 60 * 60 * 24 {
-            textToDisplay = "\(Int(timeInterval / 60 / 60)) hrs"
+            textToDisplay = "\(Int(timeInterval / 60 / 60))"
+            if Int(timeInterval / 60 / 60) == 1 {
+                textToDisplay = textToDisplay + " hour"
+            } else {
+                textToDisplay = textToDisplay + " hours"
+            }
         }
         else {
             let dateFormatter = DateFormatter()
