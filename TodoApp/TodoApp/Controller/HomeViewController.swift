@@ -129,11 +129,10 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         present(alertController, animated: true, completion: nil)
     }
     
-    func getTextToDisplayFormattingDate(date: Date) -> String {
+    func getTextToDisplayFormattingDate(date: Date,withRespectTo: Date = Date()) -> String {
         var textToDisplay = ""
         
-        let now = Date()
-        let timeInterval = now.timeIntervalSince(date)
+        let timeInterval = withRespectTo.timeIntervalSince(date)
         if timeInterval < 60 {
             textToDisplay = "just now "
         }
@@ -160,7 +159,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             if timeInterval < 60 * 60 * 24 * 6 { //less than 6 days
                 // For getting days
                 // textToDisplay = "\(Int(timeInterval / 60 / 60 / 24)) d"
-                
+
                 // For getting weekday name
                 dateFormatter.dateFormat = "EEEE"
                 textToDisplay = dateFormatter.string(from: date) //weekday name
@@ -170,7 +169,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                 textToDisplay = dateFormatter.string(from: date as Date)
             }
         }
-        
+
         return textToDisplay
     }
     

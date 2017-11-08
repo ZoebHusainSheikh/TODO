@@ -92,13 +92,31 @@ class HomeViewControllerTest: XCTestCase {
         let lessThanAMinuteDateString = homeViewController?.getTextToDisplayFormattingDate(date: lessThanAMinuteDate)
         XCTAssert(lessThanAMinuteDateString?.lowercased().trimmingCharacters(in: CharacterSet(charactersIn: " ")) == "just now", "Date formatting for date \'less than a minute\' failed")
         
+        let aMinutesDate: Date = Date().addingTimeInterval(-60 * 1)
+        let aMinutesDateString = homeViewController?.getTextToDisplayFormattingDate(date: aMinutesDate)
+        XCTAssert(aMinutesDateString?.lowercased() == "1 min", "Date formatting for date in a minute failed")
+        
         let someMinutesDate: Date = Date().addingTimeInterval(-60 * 4)
         let someMinutesDateString = homeViewController?.getTextToDisplayFormattingDate(date: someMinutesDate)
-        XCTAssert(someMinutesDateString?.lowercased() == "4 mins", "Date formatting for date in minutes failed")
+        XCTAssert(someMinutesDateString?.lowercased() == "4 mins", "Date formatting for date in multiple minutes failed")
+        
+        let anHoursDate: Date = Date().addingTimeInterval(-60 * 60)
+        let anHoursDateString = homeViewController?.getTextToDisplayFormattingDate(date: anHoursDate)
+        XCTAssert(anHoursDateString?.lowercased() == "1 hour", "Date formatting for date in an hour failed")
         
         let someHoursDate: Date = Date().addingTimeInterval(-60 * 60 * 2)
         let someHoursDateString = homeViewController?.getTextToDisplayFormattingDate(date: someHoursDate)
-        XCTAssert(someHoursDateString?.lowercased() == "2 hours", "Date formatting for date in hours failed")
+        XCTAssert(someHoursDateString?.lowercased() == "2 hours", "Date formatting for date in multiple hours failed")
+        
+        var someDate = Date(timeIntervalSince1970: 1510137576)
+        let fourthDayDate = Date(timeIntervalSince1970: 1509837576)
+        let saturdayString = homeViewController?.getTextToDisplayFormattingDate(date: fourthDayDate, withRespectTo: someDate)
+        XCTAssert(saturdayString == "Saturday", "Date formatting for date in day format failed")
+        
+        someDate = Date(timeIntervalSince1970: 1510137576)
+        let moreThan6DaysDate = Date(timeIntervalSince1970: 1509437576)
+        let moreThan6DaysDateString = homeViewController?.getTextToDisplayFormattingDate(date: moreThan6DaysDate, withRespectTo: someDate)
+        XCTAssert(moreThan6DaysDateString == "Oct 31", "Date formatting for date more than 6 days format failed")
     }
     
 }
