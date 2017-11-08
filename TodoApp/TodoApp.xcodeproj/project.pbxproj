@@ -16,7 +16,6 @@
 		481B00401FB18790007A5C55 /* TodoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B003F1FB18790007A5C55 /* TodoAppUITests.swift */; };
 		481B004E1FB1895B007A5C55 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B004D1FB1895B007A5C55 /* BaseViewController.swift */; };
 		48391F911FB1CC550031B5CB /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48391F901FB1CC550031B5CB /* TaskCell.swift */; };
-		48391F921FB1CC580031B5CB /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48391F901FB1CC550031B5CB /* TaskCell.swift */; };
 		48A6C0331FB194B100EFE736 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A6C0311FB194AE00EFE736 /* RealmSwift.framework */; };
 		48A6C0341FB194B100EFE736 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48A6C0311FB194AE00EFE736 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48A6C0351FB194B100EFE736 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A6C0321FB194B100EFE736 /* Realm.framework */; };
@@ -569,7 +568,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48391F921FB1CC580031B5CB /* TaskCell.swift in Sources */,
 				481B00351FB18790007A5C55 /* TodoAppTests.swift in Sources */,
 				538CC6121FB2F44F00CA5E6D /* HomeViewControllerTest.swift in Sources */,
 			);

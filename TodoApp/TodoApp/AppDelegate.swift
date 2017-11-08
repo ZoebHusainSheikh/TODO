@@ -9,8 +9,6 @@
 import UIKit
 import RealmSwift
 
-let realmInstance = try! Realm()
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
